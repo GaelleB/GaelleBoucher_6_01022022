@@ -22,7 +22,7 @@ exports.createSauce = (req, res, next) => {
 		}`,
 	})
 	sauce.save() 
-		.then(() => res.status(201).json({ message: 'Sauce enregistrée !' }))
+		.then(() => res.status(201).json({ message: 'Sauce sauvegardée !' }))
 		.catch((error) => res.status(400).json({ message: error }))
 };
 

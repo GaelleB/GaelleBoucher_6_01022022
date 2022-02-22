@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const dotEnv = require('dotenv').config();
 
 const path = require('path');
 
 // Importation des routes
 const saucesRoutes = require('./routes/sauces');
 const userRoutes = require('./routes/user');
+const likeDislike = require('./routes/like-dislike');
 
 // Connexion à MongoDB Atlas
 mongoose.connect('mongodb+srv://gahell:mdp23@cluster0.womlu.mongodb.net/dataBaseP6?retryWrites=true&w=majority',
@@ -27,8 +29,10 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
-app.use('/api/sauces', saucesRoutes)
-app.use('/api/auth', userRoutes)
+// Routes
+app.use('/api/sauces', saucesRoutes);
+app.use('/api/sauces', likeDislike);
+app.use('/api/auth', userRoutes);
 
 module.exports = app;
 
