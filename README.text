@@ -1,0 +1,6 @@
+Le fichier .env n'est pas pushé dans le dossier backend.
+Veuillez mettre le .env ci-joint dans le backend pour avoir les données.
+
+Le dossier node_modules n'est également pas inclus dans le dossier backend. Avant de lancer le projet, il vous faudra installer les modules nécessaires. 
+
+Lien vers dépôt distant : https://github.com/GaelleB/GaelleBoucher_6_01022022.git
