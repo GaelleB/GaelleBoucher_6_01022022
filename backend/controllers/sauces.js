@@ -1,4 +1,7 @@
-const Sauce = require('../models/Sauce')
+const Sauce = require('../models/Sauce') // sauceSchema
+
+// Importation du package fs (File System) 
+// Pour accéder et interagir avec le système de fichiers
 const fs = require('fs')
 
 exports.getAllSauces = (req, res, next) => {
@@ -27,6 +30,7 @@ exports.createSauce = (req, res, next) => {
 };
 
 exports.getOneSauce = (req, res, next) => {
+	// Retrouve la sauce avec le même ID
 	Sauce.findOne({ _id: req.params.id })
 		.then((sauce) => {
 			res.status(200).json(sauce)
@@ -42,7 +46,8 @@ exports.modifySauce = (req, res, next) => {
 			...JSON.parse(req.body.sauce),
 			imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
 		} : { ...req.body };
-	Sauce.updateOne({ _id: req.params.id },{ ...sauceObject, _id: req.params.id })
+		// Met à jour la sauce avec updateOne
+	Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
 		.then(() => res.status(200).json({ message: 'Sauce modifiée !' }))
 		.catch((error) => res.status(400).json({ error }));
 };
@@ -57,5 +62,6 @@ exports.deleteSauce = (req, res, next) => {
 					.catch((error) => res.status(400).json({ error }))
 			})
 		})
+		// Erreur server
 		.catch((error) => res.status(500).json({ error }))
 };

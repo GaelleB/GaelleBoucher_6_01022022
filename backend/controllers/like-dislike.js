@@ -1,4 +1,4 @@
-const Sauce = require('../models/Sauce')
+const Sauce = require('../models/Sauce') // sauceShema
 
 // L'utilisateur peut liker, disliker, ou annuler
 exports.likeStatus = (req, res) => {
@@ -14,15 +14,16 @@ exports.likeStatus = (req, res) => {
 
 			console.log('Statut : ', like)
 
+			// Fonction like
 			switch (like) {
-				// like +1
-				case "like":
+				// +1 (like)
+				case 1:
 					sauce.likes += 1
 					sauce.usersLiked.push(userId)
 					break
 
-				// annule -1
-				case "annule le choix":
+				// Annule -1
+				case 0:
 					if (userLike) {
 						sauce.likes -= 1
 						sauce.usersLiked = sauce.usersLiked.filter((id) => id !== userId)
@@ -35,8 +36,8 @@ exports.likeStatus = (req, res) => {
 					}
 					break
 
-				// dislike +1
-				case "dislike":
+				// +1 (dislike)
+				case -1:
 					sauce.dislikes += 1
 					sauce.usersDisliked.push(userId)
 			}
@@ -45,5 +46,6 @@ exports.likeStatus = (req, res) => {
 				.then(() => res.status(201).json({ message: 'Sauce sauvegardée' }))
 				.catch((error) => res.status(400).json({ error }))
 		})
+		// Erreur server
 		.catch((error) => res.status(500).json({ error }))
 }

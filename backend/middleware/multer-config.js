@@ -1,3 +1,5 @@
+// Importation du package Multer
+// Principalement utilisé pour télécharger des fichiers
 const multer = require('multer');
 
 const MIME_TYPES = {
@@ -11,7 +13,7 @@ const storage = multer.diskStorage({
         callback(null, 'images');
     },
     filename: (req, file, callback) => {
-        const name = file.originalname.split(' ').join('_');
+        const name = file.originalname.split(' ').join('_'); // Remplacement des espaces par des underscore _
         const extension = MIME_TYPES[file.mimetype];
         callback(null, name + Date.now() + '.' + extension);
     }

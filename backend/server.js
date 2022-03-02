@@ -1,13 +1,14 @@
 // Inportation du package http de Node pour la création d'un serveur Node
 const http = require('http');
 
-// Importation de l'index de l'application
+// Importation de app.js
 const app = require('./app');
 
+// Configure le port
 app.set('port', process.env.PORT || 3000);
 
-// Un serveur Node démarre avec la méthode createServer du package http
+// Création d'un serveur HTTP
 const server = http.createServer(app);
 
-// Ecoute le port (environnement PORT, ou 3000)
+// Ecoute du port (environnement PORT, ou 3000)
 server.listen(process.env.PORT || 3000);

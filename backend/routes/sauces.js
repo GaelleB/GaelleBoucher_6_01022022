@@ -1,9 +1,14 @@
+// Importation du package express
 const express = require('express');
+
+// Pour créer un nouvel objet routeur
 const router = express.Router();
 
+// Chemin vers le dossier Middleware
 const auth = require('../middleware/auth');
 const multer = require('../middleware/multer-config');
 
+// Chemin vers le dossier Controllers
 const saucesCtrl = require('../controllers/sauces');
 
 router.post('/', auth, multer, saucesCtrl.createSauce);
