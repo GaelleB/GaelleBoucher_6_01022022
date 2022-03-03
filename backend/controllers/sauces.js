@@ -1,4 +1,5 @@
-const Sauce = require('../models/Sauce') // sauceSchema
+// Chemin vers le dossier Models
+const Sauce = require('../models/Sauce')
 
 // Importation du package fs (File System) 
 // Pour accéder et interagir avec le système de fichiers

@@ -1,9 +1,9 @@
 // Importation des packages installés de Node.js
 
 // Importation du package express
-// Cadre d'application Web Node.js minimal et flexible fournissant un ensemble robuste de fonctionnalités
+// Minimal et flexible fournissant un ensemble robuste de fonctionnalités
 // Pour développer des applications Web et mobiles
-// Facilite le développement rapide d'applications Web basées sur Node.
+// Facilite le développement rapide d'applications Web basées sur Node
 const express = require('express');
 
 const app = express();
@@ -14,7 +14,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 // Importation et configuration de dotenv
-// Module sans dépendance qui charge les variables d'environnement d'un fichier .env dans process.env
+// Charge les variables d'environnement d'un fichier .env dans process.env
 require('dotenv').config()
 
 // Importation du package path

@@ -1,5 +1,5 @@
 // Importation du package jsonwebtoken 
-// Pour créer et vérifier les tokens d'authentification
+// Moyen sécurisé d'authentifier les utilisateurs et de partager des informations
 const jwt = require('jsonwebtoken');
 
 // Importation et configuration de dotenv

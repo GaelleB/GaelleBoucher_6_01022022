@@ -1,11 +1,12 @@
-// Importation du package bcrypt pour hasher le mot de passe
+// Importation du package bcrypt pour hacher le mot de passe
 const bcrypt = require('bcrypt');
 
 // Importation du package jsonwebtoken 
-// Pour créer et vérifier les tokens d'authentification
+// Moyen sécurisé d'authentifier les utilisateurs et de partager des informations
 const jwt = require('jsonwebtoken');
 
-const User = require('../models/User') // userSchema
+// Chemin vers le dossier Models
+const User = require('../models/User') 
 
 // Importation et configuration de dotenv
 require('dotenv').config()

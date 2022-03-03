@@ -1,5 +1,7 @@
 // Importation du package express
 const express = require('express');
+
+// Pour créer un nouvel objet routeur
 const router = express.Router();
 
 // Chemin vers le dossier Controllers

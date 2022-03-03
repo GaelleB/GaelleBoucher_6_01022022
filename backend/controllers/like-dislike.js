@@ -1,4 +1,5 @@
-const Sauce = require('../models/Sauce') // sauceShema
+// Chemin vers le dossier Models
+const Sauce = require('../models/Sauce') //
 
 // L'utilisateur peut liker, disliker, ou annuler
 exports.likeStatus = (req, res) => {

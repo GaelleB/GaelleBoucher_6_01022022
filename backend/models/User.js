@@ -1,10 +1,12 @@
+// Importation du package mongoose
 const mongoose = require('mongoose')
 
-// Onn ne peut s'inscrire qu'avec une seule adresse mail
+// Importation du package mongoose-unique-validator
+// Ajoute une validation de pré-enregistrement pour les champs uniques dans un schéma Mongoose
 const uniqueValidator = require('mongoose-unique-validator')
 
 const userSchema = mongoose.Schema({
-	email: { type: String, required: true, unique: true }, // On ne peut s'inscrire qu'avec une seule adresse mail avec unique:true
+	email: { type: String, required: true, unique: true }, // Adresse email unique
 	password: { type: String, required: true },
 });
 
